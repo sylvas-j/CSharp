@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">This page tells you which is the greater between two digits entered </h3>
+    <h4>So enter a valid number greater that zero else boom on your screen. <br /> Good luck!!! </h4>
+    
+</div>
+
+<!--This is to receive input from the user.-->
+<div style="text-align:center;">
+    <form asp-controller="Cal" asp-action="add" method="POST">
+        <input type="number" placeholder = "firstnumber" name="firstnumb" />
+        <input type="number" placeholder = "secondnumber" name="secondnumb" />
+        <input type="submit" value="submit" />
+         
+    </form>
+    
+</div>
+<p></p>
+
+<!--This is to display the user result.-->
+<div style="text-align:center;">
+@{
+    if(ViewBag.result != null){
+    <p>
+        <strong><h3>You just got this from what you entered<br /></h3></strong>
+        <strong>@ViewBag.result</strong>
+    </p>
+    }
+}
+</div>
